@@ -1,0 +1,29 @@
+# Render Blueprint — creates the AngeliteCare web service (Express API + Vue site on one URL).
+# Render dashboard → New → Blueprint → pick this repository.
+services:
+  - type: web
+    name: angelitecare
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false # you'll be asked to paste your MongoDB Atlas connection string
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 8h
+      - key: CLINIC_TIMEZONE
+        value: Asia/Manila
+      - key: EXPIRY_WARNING_DAYS
+        value: "30"
+      - key: SEED_DEMO_DATA
+        value: "true" # loads sample data the first time (only when the database is empty)

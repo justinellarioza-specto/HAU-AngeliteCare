@@ -1,0 +1,33 @@
+{
+  "name": "angelitecare-backend",
+  "version": "1.0.0",
+  "description": "AngeliteCare backend — HAU Clinic patient records, consultation queue and inventory (Node/Express/MongoDB)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node src/scripts/seed.js",
+    "create-admin": "node src/scripts/createAdmin.js"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.1",
+    "morgan": "^1.12.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true
+}
